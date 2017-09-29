@@ -10,3 +10,4 @@ node_js:
 script:
 - npm install
 - node script.js
+- ls
