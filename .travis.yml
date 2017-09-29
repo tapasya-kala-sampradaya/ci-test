@@ -6,14 +6,14 @@ after_success:
   - . deploy.sh ; file_deploy
 before_deploy:
   - . deploy.sh ; os_deploy
-deploy:
-  # deploy develop to the staging environment
-  - provider: script
-    script: . deploy.sh ; file_deploy
-    on:
-      branch: develop
-  # deploy master to production
-  - provider: script
-    script: . deploy.sh ; os_deploy
-    on:
-      branch: master
+# deploy:
+#   # deploy develop to the staging environment
+#   - provider: script
+#     script: . deploy.sh ; file_deploy
+#     on:
+#       branch: develop
+#   # deploy master to production
+#   - provider: script
+#     script: . deploy.sh ; os_deploy
+#     on:
+#       branch: master
