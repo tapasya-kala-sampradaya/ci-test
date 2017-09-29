@@ -11,4 +11,4 @@ node_js:
 script:
   - npm install
   - node script.js
-  - dpkg -l | grep ftp
+  - ls rama/
