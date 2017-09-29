@@ -4,11 +4,11 @@ env:
   - secure: DiDKLCxyc6QVhmP5XLODE+ISSFC2uEKA6mZaRBlpHu5W30EEejP8iT/s+TwGWOc6eoMzQdYEjv0CYfUlFzriZRlgL9oHqBYCNreC87gZ9oi38rhRz4sM6wHebcuMmFounaZ2wTPFkDNqPME8StzXYRUjntrQQtnl1jvER375ShY8toWoLQ8G1eYfphSNY7oM7UpD9I6UYJ5NvOkLvfCrJBOK27YRqW1/ysCmA2Dsej/C++EirmY+U1R1C/j68rJjjDHWw5Cl6Ghg65ZopptNr2phDIgoVIl/39luN830FiL3ZuNgIpogokyWTc976xszUOSbqVHuXKOsbirRmuVR8z0P9J8c/2rbkw5zsL1Ys1/CH0QRUZsdEcLNU1sdtkUl8iIwuMoNY3SPbnEH+kohKS38Fkzb48DMiH/d7vryRjAsiKg+HofP5PNX+J+4B/YBN5uhjHezLcoiWi6W6IV+XVVd/oFEnmNPYI+1uNkJX2ZxYwHC2UQyWkddJkT6LLpb5j60Puz/9Qtpr2Z14Fs5yZk4W8p8o4KsQIU85VyMv4k5WO7qJzFPzK9/wEOPAM0yhjnbEUAcER99tXCnX1euKzpJInEDBASTUSwx8gl/RHBM5rzN+WBAox8i2efeoFD9/IWo0Wjms3cqRL3lGIgi2Xn8p1bL6quVWNQrg+sI0a0=
   - secure: YOBZ/6A3mPwdOfRYZ5DavdhFmTOQgosdFbT/d/8oY6JPtLCAtCuzebPLl0RrY5z9oG4LLZ4UiCu5dpizUmD1YwdQpPHcdgeZIhYQVHFFH8xSrm2u/U+SjvuJzcIhD6OgdBLEfAxKBwGInrsKPVNRyfelAu0fq4/EyUC+zDerOUD/WdmBIpHt6agSXEV+UEy4HnYtuhACn/46qmLj8ibvm2A7m497XA+iXNUb2IeiMabxmrZaffyVwHNAfX23HNEXeC9TXDymVj6U90PbbNtEC8Wm7YhvTIHpkjKWR3HoeUtkhjjtWuR/mPT/864AW+W0aj3377+CkMEYGBnYbz6CG/5p0LZCMkV59M0/6zO1TGdWchMrQN532RL6/M6eZj4dv1+2TDXf/RlhwGGMflB9RwHx+JW9RaIMsPU8vnSWPJIhkajWQR8r9H+1RWtxX5rParYXaBeTmudRy5pN8hbdYsHk7tWVMe68sKghh/hEHE7yi523x5v4UX6TjidwAoEvPwLHDpflB+DaB8QhOaGQTOSJHX2J5dd/nnBKF4b+DXzfhSYcNWkS3N4viHrMoWqibK9ippgvIN5YeNXC9VTK2gO2KJFj4GZW5ehfXIcXVbrI2LH46BQOaJ6oX2XKsSf947xiWh2Ha49IA/eMoe5ItvmslHmkYZrldhw4oWxukIc=
 after_success:
-- find rama -type f -exec curl --ftp-create-dirs -u $FTP_USER:$FTP_PASS -T {} $FTP_HOST/ci-test/{} \;
+  - . deploy.sh ; file_deploy
 language: node_js
 node_js:
-- stable
+  - stable
 script:
-- npm install
-- node script.js
-- dpkg -l | grep ftp
+  - npm install
+  - node script.js
+  - dpkg -l | grep ftp

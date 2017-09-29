@@ -1,5 +1,5 @@
 file_deploy() {
-  echo "File deploy"
+  find rama -type f -exec curl --ftp-create-dirs -u $FTP_USER:$FTP_PASS -T {} $FTP_HOST/ci-test/{} \;
 }
 
 os_deploy() {
