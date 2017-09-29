@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - stable
+after_success:
+  - . deploy.sh ; file_deploy
+before_deploy:
+  - . deploy.sh ; os_deploy
