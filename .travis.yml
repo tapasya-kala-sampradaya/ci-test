@@ -1,12 +1,14 @@
 language: node_js
 node_js:
   - stable
-script: echo "Hi"
-after_success:
-  - npm build
-  - . deploy.sh ; file_deploy
-before_deploy:
-  - . deploy.sh ; os_deploy
+script: 
+  - npm install
+  - node script.js
+# after_success:
+#   - npm build
+#   - . deploy.sh ; file_deploy
+# before_deploy:
+#   - . deploy.sh ; os_deploy
 # deploy:
 #   # deploy develop to the staging environment
 #   - provider: script
