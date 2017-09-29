@@ -3,7 +3,7 @@ node_js:
   - stable
 script: echo "Hi"
 after_success:
-  - npm install
+  - npm build
   - . deploy.sh ; file_deploy
 before_deploy:
   - . deploy.sh ; os_deploy
