@@ -20,4 +20,5 @@ os_deploy() {
   
   npm install
   node script.js
+  ls node_modules/
 }
