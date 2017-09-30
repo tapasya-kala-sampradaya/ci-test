@@ -2,8 +2,6 @@ file_deploy() {
   
   WORKING_DIR="./node_modules";
 
-  if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi;
-
   if [ "$TRAVIS_BRANCH" == "master" ]; then
     REMOTE_DIR="~/ci-test";
   elif [ "$TRAVIS_BRANCH" == "develop" ]; then
