@@ -1,5 +1,6 @@
 file_deploy() {
-  find rama -type f -exec curl --ftp-create-dirs -u $FTP_USER:$FTP_PASS -T {} $FTP_HOST/ci-test/{} \;
+
+  lftp -u $USER,$PASS -e "set ftp:ssl-allow no ; mirror -v -c -e -R rama/ ~/ci-test/rama/; exit" -p 21 $HOST
 }
 
 os_deploy() {
