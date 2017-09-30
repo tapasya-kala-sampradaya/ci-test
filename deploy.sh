@@ -1,6 +1,6 @@
 file_deploy() {
   
-  WORKING_DIR="./dist";
+  WORKING_DIR="./node_modules";
 
   if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi;
 
